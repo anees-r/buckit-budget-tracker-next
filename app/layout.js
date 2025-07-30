@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import RootProviders from "@/components/providers/RootProviders";
-import NavBar from "@/components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +18,7 @@ export const metadata = {
   description:
     "A user friendly budget tracker application. Use it to manage your finances, smartly. Track inflow and outflow of your money with interactive graphs and statistics.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 

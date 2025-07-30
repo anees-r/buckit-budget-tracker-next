@@ -5,10 +5,10 @@ import { CircleDollarSign } from "lucide-react";
 const Logo = () => {
   return (
     <>
-      <Link href="/">
+      <Link href="/dashboard">
         <div className="flex items-center justify-center gap-2">
           <CircleDollarSign className="stroke h-8 w-8 stroke-amber-500 stroke-[2]" />
-          <p className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text font-bold text-3xl leading-tight tracking-tighter text-transparent">Buckit.</p>
+          <p className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text font-bold text-3xl leading-tight tracking-tighter text-transparent">Buckit.</p>
         </div>
       </Link>
     </>

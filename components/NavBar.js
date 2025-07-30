@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "./ui/button";
-import { UserButton } from "@clerk/nextjs";
 import { ThemeSwitcherButton } from "./ThemeSwitcherButton";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";
+import { useTheme } from "next-themes";
+import MyUserButton from "./MyUserButton";
 
 const NavBar = () => {
   return (
@@ -36,6 +37,7 @@ const items = [
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="block border-separate bg-background md:hidden">
@@ -67,7 +69,7 @@ const MobileNavbar = () => {
           </div>
           <div className="flex items-center gap-2">
             <ThemeSwitcherButton />
-            <UserButton />
+            <MyUserButton />
           </div>
         </nav>
       </div>
@@ -76,6 +78,8 @@ const MobileNavbar = () => {
 };
 
 const DesktopNavbar = () => {
+  const { resolvedTheme } = useTheme();
+
   return (
     <>
       <div className="hidden border-separate border-b bg-background md:block">
@@ -94,7 +98,7 @@ const DesktopNavbar = () => {
           </div>
           <div className="flex items-center gap-4">
             <ThemeSwitcherButton />
-            <UserButton />
+            <MyUserButton />
           </div>
         </nav>
       </div>
@@ -116,14 +120,14 @@ const NavBarItem = ({ label, link, onClick }) => {
             "w-full justify-start text-lg text-muted-foreground hover:text-foreground",
             isActive && "text-foreground"
           )}
-          onClick={()=>{
-            if(onClick) onClick();
+          onClick={() => {
+            if (onClick) onClick();
           }}
         >
           {label}
         </Link>
         {isActive && (
-          <div className="absolute -bottom-[2px] left-3 hidden h-[2px] w-[80%] rounded-xl bg-foreground md:block"></div>
+          <div className="absolute -bottom-[2px] left-3 hidden h-[2px] w-[80%] rounded-xl bg-amber-500 md:block"></div>
         )}
       </div>
     </>
