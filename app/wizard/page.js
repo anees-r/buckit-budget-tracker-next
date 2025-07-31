@@ -27,7 +27,7 @@ const wizard = () => {
             <div>
               <h1 className="text-center text-3xl">
                 Welcome,{" "}
-                <span className="text-amber-500 font-bold ml-2">
+                <span className="text-purple-500 font-bold ml-2">
                   {user?.firstName ? user?.firstName : user?.username}! 👋
                 </span>
               </h1>
@@ -52,7 +52,7 @@ const wizard = () => {
             </Card>
             <Separator/>
             <Button className={"w-full"} asChild>
-            <Link href={"/dashboard"}>
+            <Link href={"/"}>
             I&apos;m done! Take me to the dashboard
             </Link>
             </Button>

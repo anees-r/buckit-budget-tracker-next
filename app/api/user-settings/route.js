@@ -26,6 +26,6 @@ export const GET = async (request) => {
   }
 
   console.log(userSettings)
-  revalidatePath("/dashboard")
+  revalidatePath("/")
   return Response.json(userSettings);
 };

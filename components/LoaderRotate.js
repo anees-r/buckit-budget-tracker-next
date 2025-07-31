@@ -2,7 +2,7 @@
 import React from "react";
 import { MoonLoader } from "react-spinners";
 
-const LoaderRotate = ({ size = "40px", color="#fe9a00" }) => {
+const LoaderRotate = ({ size = "40px", color="#AD46FF" }) => {
   return (
     <div>
       <MoonLoader size={size} color={color} />

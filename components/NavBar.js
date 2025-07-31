@@ -23,7 +23,7 @@ const NavBar = () => {
 const items = [
   {
     label: "Dashboard",
-    link: "/dashboard",
+    link: "/",
   },
   {
     label: "Transaction",
@@ -127,7 +127,7 @@ const NavBarItem = ({ label, link, onClick }) => {
           {label}
         </Link>
         {isActive && (
-          <div className="absolute -bottom-[2px] left-3 hidden h-[2px] w-[80%] rounded-xl bg-amber-500 md:block"></div>
+          <div className="absolute -bottom-[2px] left-3 hidden h-[2px] w-[80%] rounded-xl bg-purple-500 md:block"></div>
         )}
       </div>
     </>
