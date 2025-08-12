@@ -5,6 +5,8 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import React from "react";
 import CreateTransactionDialog from "./_components/CreateTransactionDialog";
+import NewTransactionButtons from "./_components/NewTransactionButtons";
+import Overview from "./_components/Overview";
 
 const Dashboard = async () => {
   const user = await currentUser();
@@ -30,35 +32,11 @@ const Dashboard = async () => {
             </span>
           </p>
 
-          <div className="flex items-center gap-3">
-            <CreateTransactionDialog
-              type={"income"}
-              trigger={
-                <Button
-                  className={
-                    "border-1 border-purple-500 bg-purple-950 text-white hover:bg-purple-700 hover:text-white"
-                  }
-                >
-                  New income 🤑
-                </Button>
-              }
-            />
-
-            <CreateTransactionDialog
-              type="expense"
-              trigger={
-                <Button
-                  className={
-                    "border-1 border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white"
-                  }
-                >
-                  New expense 😭
-                </Button>
-              }
-            />
-          </div>
+            <NewTransactionButtons/>
+          
         </div>
       </div>
+      <Overview userSettings={userSettings}/>
     </div>
   );
 };

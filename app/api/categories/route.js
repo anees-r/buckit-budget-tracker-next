@@ -10,12 +10,15 @@ export const GET = async (request) => {
     redirect("/sign-in");
   }
 
-  const { searchParams } = new URL(request.URL);
+  const { searchParams } = new URL(
+    request.url,
+    `http://${request.headers.get("host")}`
+  );
 
   const paramType = searchParams.get("type");
 
   // nullable allows user to call api without passing a type param
-  const validator = z.enum(["income", "expense"]).nullable;
+  const validator = z.enum(["income", "expense"]).nullable();
 
   const queryParams = validator.safeParse(paramType);
 
@@ -32,5 +35,10 @@ export const GET = async (request) => {
       userId: user.id,
       ...(type && { type }), // only include type in where if it is passed by client
     },
+    orderBy: {
+      name: "asc",
+    },
   });
+
+  return Response.json(categories);
 };
