@@ -22,7 +22,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import CreateCategorySchema from "@/schema/categories";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PopoverContent } from "@radix-ui/react-popover";
 import { CircleOff, Loader2, PlusSquare } from "lucide-react";
@@ -34,8 +33,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import CreateCategory from "../_actions/categories";
 import { toast } from "sonner";
 import { useTheme } from "next-themes";
+import { CreateCategorySchema } from "@/schema/categories";
 
-const CreateCategoryDialog = ({ type, successCallback }) => {
+const CreateCategoryDialog = ({ type, successCallback, trigger }) => {
   const [open, setOpen] = useState(false);
 
   const theme = useTheme();
@@ -91,15 +91,19 @@ const CreateCategoryDialog = ({ type, successCallback }) => {
     <>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button
-            variant="ghost"
-            className={
-              "flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground"
-            }
-          >
-            <PlusSquare className="mr-2 h-4 w-4" />
-            Create new
-          </Button>
+          {trigger ? (
+            trigger
+          ) : (
+            <Button
+              variant="ghost"
+              className={
+                "flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground cursor-pointer"
+              }
+            >
+              <PlusSquare className="mr-2 h-4 w-4" />
+              Create new
+            </Button>
+          )}
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -148,7 +152,7 @@ const CreateCategoryDialog = ({ type, successCallback }) => {
                         <PopoverTrigger asChild>
                           <Button
                             variant={"outline"}
-                            className={"w-full h-[100px]"}
+                            className={"w-full h-[100px] cursor-pointer"}
                           >
                             {form.watch("icon") ? (
                               <div className="flex flex-col items-center gap-2">
@@ -191,6 +195,7 @@ const CreateCategoryDialog = ({ type, successCallback }) => {
           <DialogFooter>
             <DialogClose asChild>
               <Button
+                className={"cursor-pointer"}
                 type="button"
                 variant={"secondary"}
                 onClick={() => {
@@ -200,7 +205,7 @@ const CreateCategoryDialog = ({ type, successCallback }) => {
                 Cancel
               </Button>
             </DialogClose>
-            <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
+            <Button className={"cursor-pointer"} onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
               {isPending ? (
                 <>
                   <Loader2 className="animate-spin" />

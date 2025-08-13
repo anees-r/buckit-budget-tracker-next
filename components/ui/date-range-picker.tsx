@@ -345,7 +345,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       }}
     >
       <PopoverTrigger asChild>
-        <Button size={"lg"} variant="outline" className={undefined}>
+        <Button size={"lg"} variant="outline" className={"cursor-pointer"}>
           <div className="text-right">
             <div className="py-1">
               <div>{`${formatDate(range.from, locale)}${
@@ -498,14 +498,15 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                   }}
                 >
                   <SelectTrigger className="w-[180px] mx-auto mb-2">
-                    <SelectValue placeholder="Select..." />
+                    <SelectValue placeholder="Select..."/>
                   </SelectTrigger>
                   <SelectContent className={undefined}>
                     {PRESETS.map((preset) => (
                       <SelectItem
+                        
                         key={preset.name}
                         value={preset.name}
-                        className={undefined}
+                        className={"cursor-pointer"}
                       >
                         {preset.label}
                       </SelectItem>
@@ -560,7 +561,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
               resetValues();
             }}
             variant="ghost"
-            className={undefined}
+            className={"cursor-pointer"}
             size={undefined}
           >
             Cancel
@@ -575,7 +576,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                 onUpdate?.({ range, rangeCompare });
               }
             }}
-            className={undefined}
+            className={"cursor-pointer"}
             variant={undefined}
             size={undefined}
           >

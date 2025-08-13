@@ -61,7 +61,7 @@ const CategoryPicker = ({ type, onChange }) => {
             variant={"outline"}
             role={"combobox"}
             aria-expanded={open}
-            className={"sm:w-[200px] justify-between"}
+            className={"sm:w-[200px] justify-between cursor-pointer"}
           >
             {selectedCategory ? (
               <CategoryRow category={selectedCategory} />
@@ -93,6 +93,7 @@ const CategoryPicker = ({ type, onChange }) => {
                 {categoryQuery.data &&
                   categoryQuery.data.map((category) => (
                     <CommandItem
+                      className={"cursor-pointer"}
                       key={category.name}
                       onSelect={() => {
                         setValue(category.name);
@@ -120,7 +121,7 @@ const CategoryPicker = ({ type, onChange }) => {
 const CategoryRow = ({ category }) => {
   return (
     <>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 ">
         <span role="img">{category.icon}</span>
         <span>{category.name}</span>
       </div>

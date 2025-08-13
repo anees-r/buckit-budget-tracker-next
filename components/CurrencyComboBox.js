@@ -92,7 +92,7 @@ export function CurrencyComboBox() {
           <PopoverTrigger asChild>
             <Button
               variant="outline"
-              className="w-full justify-center"
+              className="w-full justify-center cursor-pointer"
               disabled={mutation.isPending}
             >
               {selectedOption ? <>{selectedOption.label}</> : <>Set currency</>}
@@ -112,7 +112,7 @@ export function CurrencyComboBox() {
         <DrawerTrigger asChild>
           <Button
             variant="outline"
-            className="w-full justify-start"
+            className="w-full justify-start cursor-pointer"
             disabled={mutation.isPending}
           >
             {selectedOption ? <>{selectedOption.label}</> : <>Set currency</>}
@@ -140,6 +140,7 @@ function OptionList({ setOpen, setSelectedOption }) {
         <CommandGroup>
           {Currencies.map((currency) => (
             <CommandItem
+              className={"cursor-pointer"}
               key={currency.value}
               value={currency.value}
               onSelect={(value) => {

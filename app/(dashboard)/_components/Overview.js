@@ -17,7 +17,7 @@ const Overview = ({ userSettings }) => {
     <>
       <div className="flex flex-wrap items-end justify-between gap-2 py-6 px-8">
         <h2 className="font-bold text-2xl">Overview</h2>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 cursor-none">
           <DateRangePicker
             initialDateFrom={dateRange.from}
             initialDateTo={dateRange.to}

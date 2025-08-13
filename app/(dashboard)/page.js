@@ -36,7 +36,9 @@ const Dashboard = async () => {
           <NewTransactionButtons />
         </div>
       </div>
+
       <Overview userSettings={userSettings} />
+      
       <History userSettings={userSettings} />
     </div>
   );

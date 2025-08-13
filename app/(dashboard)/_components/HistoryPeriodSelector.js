@@ -39,8 +39,8 @@ const HistoryPeriodSelector = ({
             onValueChange={(value) => setTimeframe(value)}
           >
             <TabsList>
-              <TabsTrigger value="year">Year</TabsTrigger>
-              <TabsTrigger value="month">Month</TabsTrigger>
+              <TabsTrigger className="cursor-pointer" value="year">Year</TabsTrigger>
+              <TabsTrigger className="cursor-pointer" value="month">Month</TabsTrigger>
             </TabsList>
           </Tabs>
         </SkeletonWrapper>
@@ -80,7 +80,7 @@ const YearSelector = ({ period, setPeriod, years }) => {
           })
         }
       >
-        <SelectTrigger className={"w-[180px]"}>
+        <SelectTrigger className={"w-[180px] cursor-pointer"}>
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -107,7 +107,7 @@ const MonthSelector = ({ period, setPeriod }) => {
           })
         }
       >
-        <SelectTrigger className={"w-[180px]"}>
+        <SelectTrigger className={"w-[180px] cursor-pointer"}>
           <SelectValue />
         </SelectTrigger>
         <SelectContent>

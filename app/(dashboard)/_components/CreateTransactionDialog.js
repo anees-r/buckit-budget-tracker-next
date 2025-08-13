@@ -187,7 +187,7 @@ const CreateTransactionDialog = ({ trigger, type }) => {
                               <Button
                                 variant={"outline"}
                                 className={cn(
-                                  "sm:w-[200px] pl-3 text-left font-normal",
+                                  "sm:w-[200px] pl-3 text-left font-normal cursor-pointer",
                                   !field.value && "text-muted-foreground"
                                 )}
                               >
@@ -226,6 +226,7 @@ const CreateTransactionDialog = ({ trigger, type }) => {
           <DialogFooter>
             <DialogClose asChild>
               <Button
+              className={"cursor-pointer"}
                 type="button"
                 variant={"secondary"}
                 onClick={() => {
@@ -235,7 +236,7 @@ const CreateTransactionDialog = ({ trigger, type }) => {
                 Cancel
               </Button>
             </DialogClose>
-            <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
+            <Button className={"cursor-pointer"} onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
               {isPending ? (
                 <>
                   <Loader2 className="animate-spin" />
