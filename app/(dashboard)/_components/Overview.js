@@ -5,6 +5,8 @@ import { MAX_DATE_RANGE_DAYS } from "@/lib/constants";
 import { differenceInDays, endOfMonth, startOfMonth } from "date-fns";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import StatsCards from "./StatsCards";
+import CategoryStats from "./CategoryStats";
 
 const Overview = ({ userSettings }) => {
   const [dateRange, setDateRange] = useState({
@@ -13,7 +15,7 @@ const Overview = ({ userSettings }) => {
   });
   return (
     <>
-      <div className="container flex flex-wrap items-end justify-between gap-2 py-6 px-8">
+      <div className="flex flex-wrap items-end justify-between gap-2 py-6 px-8">
         <h2 className="font-bold text-2xl">Overview</h2>
         <div className="flex items-center gap-3">
           <DateRangePicker
@@ -38,6 +40,18 @@ const Overview = ({ userSettings }) => {
             }}
           />
         </div>
+      </div>
+      <div className="flex flex-col w-full gap-2 px-8">
+        <StatsCards
+          userSettings={userSettings}
+          from={dateRange.from}
+          to={dateRange.to}
+        />
+        <CategoryStats
+          userSettings={userSettings}
+          from={dateRange.from}
+          to={dateRange.to}
+        />
       </div>
     </>
   );

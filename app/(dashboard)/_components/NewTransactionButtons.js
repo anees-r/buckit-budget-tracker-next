@@ -13,10 +13,10 @@ const NewTransactionButtons = () => {
         type={"income"}
         trigger={
           <Button
-            className={`border-1 border-purple-500 text-white hover:text-white ${
+            className={`border-1 border-emerald-500 text-white hover:text-white ${
               resolvedTheme === "dark"
-                ? "bg-purple-950 hover:bg-purple-700"
-                : "bg-purple-700 hover:bg-purple-950"
+                ? "bg-emerald-950 hover:bg-emerald-700"
+                : "bg-emerald-700 hover:bg-emerald-900"
             }`}
           >
             New income 🤑
@@ -31,7 +31,7 @@ const NewTransactionButtons = () => {
             className={`border-1 border-rose-500 text-white hover:text-white ${
               resolvedTheme === "dark"
                 ? "bg-rose-950 hover:bg-rose-700"
-                : "bg-rose-700 hover:bg-rose-950"
+                : "bg-rose-700 hover:bg-rose-900"
             }`}
           >
             New expense 😭

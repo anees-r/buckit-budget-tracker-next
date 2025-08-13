@@ -3,6 +3,7 @@
 import prisma from "@/lib/prisma";
 import { CreateTransactionSchema } from "@/schema/transaction";
 import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 export const CreateTransaction = async (form) => {
   const parsedBody = CreateTransactionSchema.safeParse(form);

@@ -7,6 +7,7 @@ import React from "react";
 import CreateTransactionDialog from "./_components/CreateTransactionDialog";
 import NewTransactionButtons from "./_components/NewTransactionButtons";
 import Overview from "./_components/Overview";
+import History from "./_components/History";
 
 const Dashboard = async () => {
   const user = await currentUser();
@@ -32,11 +33,11 @@ const Dashboard = async () => {
             </span>
           </p>
 
-            <NewTransactionButtons/>
-          
+          <NewTransactionButtons />
         </div>
       </div>
-      <Overview userSettings={userSettings}/>
+      <Overview userSettings={userSettings} />
+      <History userSettings={userSettings} />
     </div>
   );
 };
