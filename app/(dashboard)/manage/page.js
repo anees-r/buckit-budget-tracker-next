@@ -26,8 +26,8 @@ const Manage = () => {
   return (
     <>
       {/* Header */}
-      <div className="border-b bg-card px-8">
-        <div className="flex flex-wrap items-center justify-between gap6 py-8">
+      <div className="border-b bg-card p-8">
+        <div className="flex flex-wrap items-center justify-between gap6 ">
           <div>
             <p className="text-2xl font-bold">Manage</p>
             <p className="text-muted-foreground">
@@ -160,7 +160,7 @@ const CategoryCard = ({ category }) => {
           trigger={
             <Button
               className={
-                "flex w-full border-separate items-center gap-2 rounded-t-none text-muted-foreground hover:bg-rose-500/20 cursor-pointer"
+                "flex w-full border-separate items-center gap-2 rounded-t-none text-muted-foreground hover:bg-rose-500/30 cursor-pointer"
               }
               variant={"secondary"}
             >

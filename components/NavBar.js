@@ -26,8 +26,8 @@ const items = [
     link: "/",
   },
   {
-    label: "Transaction",
-    link: "/transaction",
+    label: "Transactions",
+    link: "/transactions",
   },
   {
     label: "Manage",

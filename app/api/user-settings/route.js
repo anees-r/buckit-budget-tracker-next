@@ -25,7 +25,6 @@ export const GET = async (request) => {
     });
   }
 
-  console.log(userSettings)
   revalidatePath("/")
   return Response.json(userSettings);
 };

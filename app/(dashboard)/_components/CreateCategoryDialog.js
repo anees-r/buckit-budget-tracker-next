@@ -33,7 +33,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import CreateCategory from "../_actions/categories";
 import { toast } from "sonner";
 import { useTheme } from "next-themes";
-import { CreateCategorySchema } from "@/schema/categories";
+import CreateCategorySchema from "@/schema/categories";
 
 const CreateCategoryDialog = ({ type, successCallback, trigger }) => {
   const [open, setOpen] = useState(false);

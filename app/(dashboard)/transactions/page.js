@@ -2,22 +2,25 @@
 
 import { DateRangePicker } from "@/components/ui/date-range-picker";
 import { MAX_DATE_RANGE_DAYS } from "@/lib/constants";
-import { differenceInDays, endOfMonth, startOfMonth } from "date-fns";
+import { differenceInDays, startOfMonth } from "date-fns";
 import React, { useState } from "react";
 import { toast } from "sonner";
-import StatsCards from "./StatsCards";
-import CategoryStats from "./CategoryStats";
+import TransactionTable from "./_components/TransactionTable";
 
-const Overview = ({ userSettings }) => {
+const Transaction = () => {
   const [dateRange, setDateRange] = useState({
     from: startOfMonth(new Date()),
     to: new Date(),
   });
+
   return (
     <>
-      <div className="flex flex-wrap items-end justify-between gap-2 py-6 px-8">
-        <h2 className="font-bold text-2xl">Overview</h2>
-        <div className="flex items-center gap-3">
+      <div className="border-b bg-card p-8">
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          <div>
+            <p className="text-2xl font-bold">Transactions history</p>
+          </div>
+
           <DateRangePicker
             initialDateFrom={dateRange.from}
             initialDateTo={dateRange.to}
@@ -41,20 +44,12 @@ const Overview = ({ userSettings }) => {
           />
         </div>
       </div>
-      <div className="flex flex-col w-full gap-2 px-8">
-        <StatsCards
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
-        <CategoryStats
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
+
+      <div>
+        <TransactionTable from={dateRange.from} to={dateRange.to}/>
       </div>
     </>
   );
 };
 
-export default Overview;
+export default Transaction;
