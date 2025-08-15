@@ -323,7 +323,7 @@ const RowActions = ({ transaction }) => {
       />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant={"ghost"} className={"h-8 w-8 p-0"}>
+            <Button variant={"ghost"} className={"h-8 w-8 p-0 cursor-pointer"}>
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
@@ -332,7 +332,7 @@ const RowActions = ({ transaction }) => {
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              className={"flex items-center gap-2"}
+              className={"flex items-center gap-2 cursor-pointer"}
               onSelect={() => setShowDeleteDialog((prev) => !prev)}
             >
               <TrashIcon className="h-4 w-4 text-muted-foreground" />

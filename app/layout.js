@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Buckit.",
   description:
-    "A user friendly budget tracker application. Use it to manage your finances, smartly. Track inflow and outflow of your money with interactive graphs and statistics.",
+    "A user friendly budget tracker application. Use it to manage your finances, smartly. Track inflow and outflow of your money with interactive graphs and statistics. This application is developed by @anees-r on github.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -26,7 +26,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
+      <html
+        lang="en"
+        className="dark"
+        style={{ colorScheme: "dark" }}
+        suppressHydrationWarning
+      >
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >

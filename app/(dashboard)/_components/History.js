@@ -48,7 +48,7 @@ const History = ({ userSettings }) => {
 
   return (
     <>
-      <div className="flex flex-col w-full gap-2 px-8">
+      <div className="flex flex-col w-full gap-2 px-8 pb-4">
         <h2 className="mt-12 text-2xl font-bold">History</h2>
         <Card className={"col-span-12 mt-2 w-full"}>
           <CardHeader className={"gap-2"}>
