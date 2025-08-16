@@ -33,7 +33,7 @@ const getHistoryPeriods = async (userId) => {
   const years = result.map((item) => item.year);
 
   if (years.length === 0) {
-    return new Date().getFullYear();
+    return [new Date().getFullYear()];
   }
 
   return years;
